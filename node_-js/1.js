@@ -1,14 +1,21 @@
 
 const express =require('express');
 const app =  express();
+
+app.use('/',express.static(__dirname+'/views'));
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
 app.get('/',(req,res)=>{
-    res.render('ok1')
+    res.render('mom/ok1.ejs')
 })
-
-
-app.listen(process.env.PORT,()=>{
-    console.log("listt");
+app.get('/enjoy',(req,res)=>{
+    res.render('mom/ok2.ejs')
+})
+ 
+app.listen(process.env.PORT ||4000,()=>{
+    console.log(__dirname + '/TTT.html');
     
 }) 
+  
